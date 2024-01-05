@@ -1,8 +1,18 @@
 from datetime import datetime, timedelta
 
+
 class AttendanceTracker:
     def __init__(self):
         self.attendance_records = []
+        self.attendance_date = None
+        
+
+    def take_date(self):
+        date_str = input("Enter date (YYYY-MM-DD): ")
+        try:
+            self.attendance_date = datetime.strptime(date_str, "%Y-%m-%d").date()
+        except ValueError:
+            print("Please enter the date in the format YYYY-MM-DD.")
 
     def take_attendance(self):
         while True:
@@ -38,7 +48,7 @@ class AttendanceTracker:
         return total_working_hours, total_breaks
 
     def show_attendance_data(self):
-        print("Attendance Data:")
+        print(f"Attendance Data for {self.attendance_date}:")
         for entry_time, exit_time in self.attendance_records:
             print(f"Entry: {entry_time.strftime('%H:%M')} - Exit: {exit_time.strftime('%H:%M')}")
 
@@ -50,9 +60,12 @@ class AttendanceTracker:
         print(f"Total working hours: {total_work_hours}")
         print(f"Total breaks: {total_breaks}")
         print(f"Total working hours + breaks: {total_working_and_breaks}")
+        return total_work_hours, total_breaks, total_working_and_breaks
+
 
 # Example usage
 attendance = AttendanceTracker()
+attendance.take_date()
 attendance.take_attendance()
 attendance.show_attendance_data()
 attendance.show_summary()
