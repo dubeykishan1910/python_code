@@ -16,14 +16,14 @@ class AttendanceTracker:
 
     def take_attendance(self):
         while True:
-            entry_time_str = input("Enter entry time (HH:MM) or 'no' to stop: ")
-            if entry_time_str.lower() == 'no':
+            in_time_str = input("Enter entry time (HH:MM) or 'no' to stop: ")
+            if in_time_str.lower() == 'no':
                 break
 
-            exit_time_str = input("Enter exit time (HH:MM): ")
+            out_time_str = input("Enter exit time (HH:MM): ")
             try:
-                entry_time = datetime.strptime(entry_time_str, "%H:%M")
-                exit_time = datetime.strptime(exit_time_str, "%H:%M")
+                entry_time = datetime.strptime(in_time_str, "%H:%M")
+                exit_time = datetime.strptime(out_time_str, "%H:%M")
             except ValueError:
                 print("Please enter time in format HH:MM.")
                 continue
