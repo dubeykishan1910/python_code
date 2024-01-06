@@ -1,0 +1,30 @@
+[
+    {
+        "Date": "2000-05-11",
+        "Attendance": [
+            [
+                "10:00",
+                "12:00"
+            ],
+            [
+                "14:00",
+                "16:45"
+            ]
+        ],
+        "Total working hours": "4:45:00",
+        "Total breaks": "2:00:00",
+        "Total working hours + breaks": "6:45:00"
+    },
+    {
+        "Date": "None",
+        "Attendance": [
+            [
+                "10:00",
+                "12:00"
+            ]
+        ],
+        "Total working hours": "2:00:00",
+        "Total breaks": "0:00:00",
+        "Total working hours + breaks": "2:00:00"
+    }
+]
